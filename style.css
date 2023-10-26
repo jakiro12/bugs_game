@@ -100,3 +100,30 @@
   border: 2px solid black;
   margin: auto;
 }
+.fire_fly_container{
+  width: 90%;
+  height: 90%;
+  outline: 2px solid black;
+  margin: auto;
+}
+.progess_bar{
+  width: 80%;
+  height: 30px;
+  margin: auto;
+}
+.btn_settings_ui{
+  width: 90%;
+  height: 90%;
+  outline: 2px solid black;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.btn_volume{
+  width: 40px;
+  height: 40px;
+  border: 2px solid black;
+  cursor: pointer;
+  border-radius: 5px;
+}
