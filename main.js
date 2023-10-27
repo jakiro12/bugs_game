@@ -3,6 +3,7 @@ import { createAndAnimateBugs } from './BugsSprites/BugsRunning';
 import { addButtonsToChangeColors } from './Btn_controllers/btnToChangeColors';
 import { informationAboutPickLevel } from './InformationLevel/bugsPickLevel';
 import { addComponentsToHandleStatusAndSettings } from './Settings_intefaces/StatusAndSettings';
+import { handleBugToChoose } from './ChooseBug/BugToChoose';
 class MainScene extends Scene {
     constructor() {
         super({ key: 'MainScene' });
@@ -77,5 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
   addButtonsToChangeColors();
   informationAboutPickLevel();
   addComponentsToHandleStatusAndSettings();
+  handleBugToChoose(); //Maneja los insectos que apareceran para elegir
 });
 
