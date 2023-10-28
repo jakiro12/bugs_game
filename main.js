@@ -34,7 +34,7 @@ const config = {
 };
 
 function addSections() {
-    const appElement = document.getElementById('app');
+    const appElement = document.getElementById('app'); //capturar el id con el id = app
     const sectionsHeaderIndsideGameView=document.createElement('header'); //header dentro del juego
     const sectionsMainIndsideGameView=document.createElement('main'); //main dentro del juego
     const sectionsFooterIndsideGameView=document.createElement('footer'); //footer dentro del juego
@@ -60,8 +60,8 @@ function addSections() {
             const game = new Game(config);
 
             // Renderizar el juego dentro de la segunda sección
-            const phaserGameContainer = document.querySelector('.main_game_options');
-            phaserGameContainer.appendChild(game.canvas);
+            const phaserGameContainer = document.querySelector('.main_game_options');//main dentro del juego
+            phaserGameContainer.appendChild(game.canvas); // medir dimensiones del contenedor
         } else if(i ===1) {
             appElement.appendChild(section);
             section.className='game_info_and_options_1'
@@ -73,7 +73,7 @@ function addSections() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  addSections();
+  addSections(); // se ejecuta primero 
   createAndAnimateBugs();
   addButtonsToChangeColors();
   informationAboutPickLevel();
