@@ -20,17 +20,17 @@ function addButtonsToChangeColors(){
 
     btnRed.addEventListener('click',()=>{
         changeColorBugsTag.forEach((bug) => {
-            bug.style.setProperty('--set-bluebtn', 'red');
+            bug.style.setProperty('--set-colorbtn', 'red');
         });
     })
     btnBlue.addEventListener('click',()=>{
         changeColorBugsTag.forEach((bug) => {
-            bug.style.setProperty('--set-bluebtn', 'blue');
+            bug.style.setProperty('--set-colorbtn', 'blue');
         });
     })
     btnYellow.addEventListener('click',()=>{
         changeColorBugsTag.forEach((bug) => {
-            bug.style.setProperty('--set-bluebtn', 'yellow');
+            bug.style.setProperty('--set-colorbtn', 'yellow');
         });
     })
 }

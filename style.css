@@ -1,5 +1,9 @@
 :root{
-  --set-bluebtn:grey /*variable de colores*/;
+  --set-colorbtn:grey /*variable de colores*/;
+  --set-redcolorwheel:grey;
+  --set-bluecolorwheel:grey;
+  --set-yellowcolorwheel:grey;
+
 }
 #app{
   height: 100vh;
@@ -67,7 +71,7 @@
 
 }
 .bugs_styles{
-  background-color: var(--set-bluebtn);
+  background-color: var(--set-colorbtn);
   cursor: pointer;
 }
 .box_about_this_level{
@@ -104,9 +108,12 @@
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  border: 2px solid black;
+  border: 4px groove #e0c872;
   margin: auto;
-}
+  background-image: conic-gradient(
+     var(--set-yellowcolorwheel) 0deg 30deg, grey 30deg 60deg, orangered 60deg 90deg, grey 90deg 120deg, var(--set-redcolorwheel) 120deg 150deg, grey 150deg 180deg, violet 180deg 210deg, grey 210deg 240deg, var(--set-bluecolorwheel) 240deg 270deg, grey 270deg 300deg, green 300deg 330deg, grey 330deg 360deg );
+  transform: rotateZ(-15deg); 
+    }
 .fire_fly_container{
   width: 90%;
   height: 90%;
