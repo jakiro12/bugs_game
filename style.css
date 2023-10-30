@@ -108,7 +108,7 @@
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  border: 4px groove #e0c872;
+  border: 4px solid #e0c872;
   margin: auto;
   background-image: conic-gradient(
      var(--set-yellowcolorwheel) 0deg 30deg, grey 30deg 60deg, orangered 60deg 90deg, grey 90deg 120deg, var(--set-redcolorwheel) 120deg 150deg, grey 150deg 180deg, violet 180deg 210deg, grey 210deg 240deg, var(--set-bluecolorwheel) 240deg 270deg, grey 270deg 300deg, green 300deg 330deg, grey 330deg 360deg );
@@ -167,4 +167,13 @@
   border-radius: 5px;
   background-color: #b1a58d;
   box-shadow: inset 0px 0px 15px rgba(255, 255, 255, 0.522);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bug_to_pick{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid black;
 }

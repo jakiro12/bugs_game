@@ -1,0 +1,1 @@
+export const chromaticWheelColors=["red","blue","yellow"]
