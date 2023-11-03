@@ -15,8 +15,11 @@ function handleBugToChoose (){
     console.log(chromaticWheelColors)
     allBugsMoving[0].addEventListener('click',()=>{
         let colorName= getComputedStyle(allBugsMoving[0]).getPropertyValue('--set-colorbtn') //los estilos de ese insecto
-        console.log('hola colorin  '+ colorName)
-        chromaticElement.style.setProperty('--set-redcolorwheel', `${colorName}`);
+        if(colorName === chromaticWheelColors[0]){ // si el color del insecto coincide al de la primera posicion del array ejecuto
+            console.log('es el color')
+            chromaticElement.style.setProperty(`--set-${colorName}colorwheel`, `${colorName}`);// aplica el color en la rueda
+        }
+
     })
     allBugsMoving[1].addEventListener('click',()=>{
         let colorName= getComputedStyle(allBugsMoving[1]).getPropertyValue('--set-colorbtn')
