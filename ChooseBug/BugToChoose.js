@@ -1,4 +1,5 @@
 import { chromaticWheelColors } from "../GlobarVars/chromaticColors";
+import { levelSuccesslful } from "../Modals/CompleteLevel";
 
 const boxToShowCurrentBug=document.createElement('div')
 boxToShowCurrentBug.className='card_current_bug'
@@ -8,15 +9,19 @@ bugRequired.className='bug_to_pick'
 function handleBugToChoose (){
     const parentElement=document.querySelector('.header_game_options');
     const allBugsMoving=document.querySelectorAll('.bugs_styles')
-    const chromaticElement=document.querySelector('.wheel_status')
+    const chromaticElement=document.querySelector('.wheel_status_sub_level_1')
     parentElement.appendChild(boxToShowCurrentBug)
     boxToShowCurrentBug.appendChild(bugRequired)
+
 
     function updateColorToSelect(){
         if (chromaticWheelColors.length > 0) {
             bugRequired.style.backgroundColor = chromaticWheelColors[0];
           } else {
             bugRequired.style.backgroundColor = "grey"; // Si el array esta vacio dejar este color
+            setTimeout(() => {
+                levelSuccesslful()
+            }, 1000);
           }
     }
     updateColorToSelect()

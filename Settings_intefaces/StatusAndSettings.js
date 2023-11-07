@@ -7,7 +7,7 @@
 
     btnSettignsTag.appendChild(btnVolume)
     btnSettignsTag.appendChild(btnGear)
-    wheelColorTag.className='wheel_status'
+    wheelColorTag.className='wheel_status_sub_level_1'
     fireflyTag.className='fire_fly_container'
     progressBarTag.className='progess_bar'
     btnSettignsTag.className='btn_settings_ui'
