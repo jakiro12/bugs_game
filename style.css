@@ -3,7 +3,9 @@
   --set-redcolorwheel:grey;
   --set-bluecolorwheel:grey;
   --set-yellowcolorwheel:grey;
-
+  --set-violetcolorwheel:grey;
+  --set-greencolorwheel:grey;
+  --set-orangecolorwheel:grey;
 }
 #app{
   height: 100vh;
@@ -112,6 +114,16 @@
   margin: auto;
   background-image: conic-gradient(
      var(--set-yellowcolorwheel) 0deg 120deg,  var(--set-redcolorwheel) 120deg 240deg,  var(--set-bluecolorwheel) 240deg 360deg);
+}
+.wheel_status_sub_level_2{
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid #e0c872;
+  margin: auto;
+  background-image: conic-gradient(
+     yellow 0deg 60deg,  var(--set-orangecolorwheel) 60deg 120deg,  red 120deg 180deg,var(--set-greencolorwheel) 180deg 240deg, blue 240deg 300deg, var(--set-violetcolorwheel) 300deg 360deg);
+  transform: rotateZ(-30deg);
 }
 .wheel_status{
   width: 140px;

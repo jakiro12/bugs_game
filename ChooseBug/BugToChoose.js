@@ -1,4 +1,4 @@
-import { chromaticWheelColors } from "../GlobarVars/chromaticColors";
+import { chromaticWheelColors,secondarychromaticWheelColors,pickTwoColors } from "../GlobarVars/chromaticColors";
 import { levelSuccesslful } from "../Modals/CompleteLevel";
 
 const boxToShowCurrentBug=document.createElement('div')
@@ -26,14 +26,21 @@ function handleBugToChoose (){
     }
     updateColorToSelect()
     bugRequired.style.backgroundColor=`${chromaticWheelColors[0]}`
-    console.log(chromaticWheelColors)
     allBugsMoving[0].addEventListener('click',()=>{
         let colorName= getComputedStyle(allBugsMoving[0]).getPropertyValue('--set-colorbtn') //los estilos de ese insecto
         if(colorName === chromaticWheelColors[0] && chromaticWheelColors.includes(colorName)){ // si el color del insecto coincide al de la primera posicion del array ejecuto
             chromaticElement.style.setProperty(`--set-${colorName}colorwheel`, `${colorName}`);// aplica el color en la rueda
             chromaticWheelColors.splice(chromaticWheelColors.indexOf(colorName), 1);
             console.log(chromaticWheelColors)
-            updateColorToSelect(); //Refrescar color a elegir
+            updateColorToSelect(); //Refrescar color a elegir en nivel 1
+        }else if (secondarychromaticWheelColors.length > 0){
+            if(Object.values(pickTwoColors).includes('') && !Object.values(pickTwoColors).includes(colorName)){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
+                let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
+                pickTwoColors[`color${positionToAddColor + 1}`] = `${colorName}`
+                console.log(pickTwoColors)
+            }
+        }else{
+            console.log('nada aun')
         }
     })
     allBugsMoving[1].addEventListener('click',()=>{
@@ -42,8 +49,21 @@ function handleBugToChoose (){
             chromaticElement.style.setProperty(`--set-${colorName}colorwheel`, `${colorName}`);// aplica el color en la rueda
             chromaticWheelColors.splice(chromaticWheelColors.indexOf(colorName), 1);
             console.log(chromaticWheelColors)
-            updateColorToSelect(); //Refrescar color a elegir
+            updateColorToSelect(); //Refrescar color a elegir en nivel 1
+        }else  if (secondarychromaticWheelColors.length > 0){
+            const secondaryWheelSetColors=document.querySelector('.wheel_status_sub_level_2')
+            if(Object.values(pickTwoColors).includes('')  && !Object.values(pickTwoColors).includes(colorName)){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
+                let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
+                pickTwoColors[`color${positionToAddColor + 1}`] = `${colorName}`
+                console.log(pickTwoColors)
+            }else{
+                console.log('hay dos colores para elegir')
+                secondaryWheelSetColors.style.setProperty(`--set-orangecolorwheel`,`orange`)
+            }
+        }else{
+            console.log('nada aun')
         }
+
     }) 
     allBugsMoving[2].addEventListener('click',()=>{
         let colorName= getComputedStyle(allBugsMoving[0]).getPropertyValue('--set-colorbtn') //los estilos de ese insecto
@@ -51,7 +71,15 @@ function handleBugToChoose (){
             chromaticElement.style.setProperty(`--set-${colorName}colorwheel`, `${colorName}`);// aplica el color en la rueda
             chromaticWheelColors.splice(chromaticWheelColors.indexOf(colorName), 1);
             console.log(chromaticWheelColors)
-            updateColorToSelect(); //Refrescar color a elegir
+            updateColorToSelect(); //Refrescar color a elegir en nivel 1
+        }else if (secondarychromaticWheelColors.length > 0  && !Object.values(pickTwoColors).includes(colorName)){
+            if(Object.values(pickTwoColors).includes('')){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
+                let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
+                pickTwoColors[`color${positionToAddColor + 1}`] = `${colorName}`
+                console.log(pickTwoColors)
+            }
+        }else{
+            console.log('nada aun')
         }
     })
 }
