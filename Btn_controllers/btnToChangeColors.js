@@ -1,3 +1,5 @@
+import { pickTwoColors, secondarychromaticWheelColors, chromaticWheelColors, colorCombinations } from "../GlobarVars/chromaticColors"
+
 function addButtonsToChangeColors(){
     let sectionToBtns=document.querySelector('.footer_game_options')
     let changeColorBugsTag=document.querySelectorAll('.bugs_styles')
@@ -17,21 +19,78 @@ function addButtonsToChangeColors(){
     btnRed.className='btn_to_handle_colors'
     btnBlue.className='btn_to_handle_colors'
     btnYellow.className='btn_to_handle_colors'
-
+    function getMixedColor() {
+        // demora 0.5 segundos en cambiar al color deseado
+        if(!Object.values(pickTwoColors).includes('')){
+            console.log('hay dos colores')
+            const sortedColors = Object.values(pickTwoColors).sort().join('').toLowerCase(); // los ordenos y los uno, para luego buscar el valor por nombre,
+            changeColorBugsTag.forEach((bug) => {
+                bug.style.setProperty('--set-colorbtn', `${colorCombinations[`${sortedColors}`]}`);
+            });
+        }else{
+            console.log('falta un color')
+        }
+        
+    }
     btnRed.addEventListener('click',()=>{
-        changeColorBugsTag.forEach((bug) => {
-            bug.style.setProperty('--set-colorbtn', 'red');
-        });
+        let colorName='red'
+        if(chromaticWheelColors.length > 0){
+            changeColorBugsTag.forEach((bug) => {
+                bug.style.setProperty('--set-colorbtn', `${colorName}`);
+            });
+        }
+        if (secondarychromaticWheelColors.length > 0){
+            if(Object.values(pickTwoColors).includes('')  && !Object.values(pickTwoColors).includes(colorName)){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
+                let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
+                pickTwoColors[`color${positionToAddColor + 1}`] = `${colorName}`
+                console.log(pickTwoColors)
+                setTimeout(() => {
+                    getMixedColor()
+                }, 500);
+            }else{
+                console.log('ya hay dos colores elegidos')
+            }
+        }
     })
     btnBlue.addEventListener('click',()=>{
-        changeColorBugsTag.forEach((bug) => {
-            bug.style.setProperty('--set-colorbtn', 'blue');
-        });
+        let colorName='blue'
+        if(chromaticWheelColors.length > 0){
+            changeColorBugsTag.forEach((bug) => {
+                bug.style.setProperty('--set-colorbtn', `${colorName}`);
+            });
+        }
+        if (secondarychromaticWheelColors.length > 0){
+            if(Object.values(pickTwoColors).includes('')  && !Object.values(pickTwoColors).includes(colorName)){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
+                let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
+                pickTwoColors[`color${positionToAddColor + 1}`] = `${colorName}`
+                console.log(pickTwoColors)
+                setTimeout(() => {
+                    getMixedColor()
+                }, 500);
+            }else{
+                console.log('ya hay dos colores elegidos')
+            }
+        }
     })
     btnYellow.addEventListener('click',()=>{
-        changeColorBugsTag.forEach((bug) => {
-            bug.style.setProperty('--set-colorbtn', 'yellow');
-        });
+        let colorName='yellow'
+        if(chromaticWheelColors.length > 0){
+            changeColorBugsTag.forEach((bug) => {
+                bug.style.setProperty('--set-colorbtn', `${colorName}`);
+            });
+        }
+        if (secondarychromaticWheelColors.length > 0){
+            if(Object.values(pickTwoColors).includes('')  && !Object.values(pickTwoColors).includes(colorName)){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
+                let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
+                pickTwoColors[`color${positionToAddColor + 1}`] = `${colorName}`
+                console.log(pickTwoColors)
+                setTimeout(() => {
+                    getMixedColor()
+                }, 500);
+            }else{
+                console.log('ya hay dos colores elegidos')
+            }
+        }
     })
 }
 export {addButtonsToChangeColors}
