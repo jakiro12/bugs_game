@@ -1,4 +1,4 @@
-import { chromaticWheelColors } from "../GlobarVars/chromaticColors";
+import { chromaticWheelColors,secondarychromaticWheelColors } from "../GlobarVars/chromaticColors";
 import { levelSuccesslful } from "../Modals/CompleteLevel";
 
 const boxToShowCurrentBug=document.createElement('div')
@@ -34,7 +34,13 @@ function handleBugToChoose (){
             chromaticWheelColors.splice(chromaticWheelColors.indexOf(colorName), 1);
             console.log(chromaticWheelColors)
             updateColorToSelect(); //Refrescar color a elegir en nivel 1
-        }else{
+        }else if(secondarychromaticWheelColors.length > 0){
+            let chromaticElementTwo=document.querySelector('.wheel_status_sub_level_2')
+            chromaticElementTwo.style.setProperty(`--set-${colorName}colorwheel`, `${colorName}`);// aplica el color en la rueda
+             console.log(colorName)
+            
+        }
+        else{
             console.log('a pensar') // Ver que hacer o prevenir multiples clicks
         }
     })
@@ -45,6 +51,10 @@ function handleBugToChoose (){
             chromaticWheelColors.splice(chromaticWheelColors.indexOf(colorName), 1);
             console.log(chromaticWheelColors)
             updateColorToSelect(); //Refrescar color a elegir en nivel 1
+        }else if(secondarychromaticWheelColors.length > 0){
+            let chromaticElementTwo=document.querySelector('.wheel_status_sub_level_2')
+            chromaticElementTwo.style.setProperty(`--set-${colorName}colorwheel`, `${colorName}`);// aplica el color en la rueda
+             console.log(colorName)
         }else {
             console.log('pensar') // Ver que hacer o prevenir multiples clicks
         }
@@ -57,6 +67,10 @@ function handleBugToChoose (){
             chromaticWheelColors.splice(chromaticWheelColors.indexOf(colorName), 1);
             console.log(chromaticWheelColors)
             updateColorToSelect(); //Refrescar color a elegir en nivel 1
+        }else if(secondarychromaticWheelColors.length > 0){
+            let chromaticElementTwo=document.querySelector('.wheel_status_sub_level_2')
+            chromaticElementTwo.style.setProperty(`--set-${colorName}colorwheel`, `${colorName}`);// aplica el color en la rueda
+             console.log(colorName)
         }else{
             console.log('a pensar') // Ver que hacer o prevenir multiples clicks
         }

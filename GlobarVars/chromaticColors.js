@@ -5,7 +5,7 @@ export const pickTwoColors={
     color2:''
 }
 export const colorCombinations = {
-    redblue: 'violet',
+    bluered: 'violet',
     redyellow: 'orange',
     blueyellow: 'green'
 };
