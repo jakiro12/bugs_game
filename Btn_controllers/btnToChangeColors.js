@@ -49,6 +49,8 @@ function addButtonsToChangeColors(){
                 }, 500);
             }else{
                 console.log('ya hay dos colores elegidos')
+                let findColorToRemoveIt=Object.values(pickTwoColors).findIndex((e)=> e === colorName)
+                pickTwoColors[`color${findColorToRemoveIt + 1}`] = ''
             }
         }
     })
@@ -69,6 +71,8 @@ function addButtonsToChangeColors(){
                 }, 500);
             }else{
                 console.log('ya hay dos colores elegidos')
+                let findColorToRemoveIt=Object.values(pickTwoColors).findIndex((e)=> e === colorName)
+                pickTwoColors[`color${findColorToRemoveIt + 1}`] = ''
             }
         }
     })
@@ -89,6 +93,8 @@ function addButtonsToChangeColors(){
                 }, 500);
             }else{
                 console.log('ya hay dos colores elegidos')
+                let findColorToRemoveIt=Object.values(pickTwoColors).findIndex((e)=> e === colorName)
+                pickTwoColors[`color${findColorToRemoveIt + 1}`] = ''
             }
         }
     })

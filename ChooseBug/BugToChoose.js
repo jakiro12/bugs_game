@@ -17,7 +17,9 @@ function handleBugToChoose (){
     function updateColorToSelect(){
         if (chromaticWheelColors.length > 0) {
             bugRequired.style.backgroundColor = chromaticWheelColors[0];
-          } else {
+        }else if(secondarychromaticWheelColors.length > 0){
+            bugRequired.style.backgroundColor = secondarychromaticWheelColors[0];
+        } else {
             bugRequired.style.backgroundColor = "grey"; // Si el array esta vacio dejar este color
             setTimeout(() => {
                 levelSuccesslful()
@@ -25,7 +27,6 @@ function handleBugToChoose (){
           }
     }
     updateColorToSelect()
-    
     bugRequired.style.backgroundColor=`${chromaticWheelColors[0]}`
     allBugsMoving[0].addEventListener('click',()=>{
         let colorName= getComputedStyle(allBugsMoving[0]).getPropertyValue('--set-colorbtn') //los estilos de ese insecto
@@ -37,8 +38,9 @@ function handleBugToChoose (){
         }else if(secondarychromaticWheelColors.length > 0){
             let chromaticElementTwo=document.querySelector('.wheel_status_sub_level_2')
             chromaticElementTwo.style.setProperty(`--set-${colorName}colorwheel`, `${colorName}`);// aplica el color en la rueda
+            secondarychromaticWheelColors.splice(secondarychromaticWheelColors.indexOf(colorName), 1);
              console.log(colorName)
-            
+            updateColorToSelect()
         }
         else{
             console.log('a pensar') // Ver que hacer o prevenir multiples clicks
@@ -54,7 +56,9 @@ function handleBugToChoose (){
         }else if(secondarychromaticWheelColors.length > 0){
             let chromaticElementTwo=document.querySelector('.wheel_status_sub_level_2')
             chromaticElementTwo.style.setProperty(`--set-${colorName}colorwheel`, `${colorName}`);// aplica el color en la rueda
+            secondarychromaticWheelColors.splice(secondarychromaticWheelColors.indexOf(colorName), 1);
              console.log(colorName)
+            updateColorToSelect()
         }else {
             console.log('pensar') // Ver que hacer o prevenir multiples clicks
         }
@@ -70,7 +74,9 @@ function handleBugToChoose (){
         }else if(secondarychromaticWheelColors.length > 0){
             let chromaticElementTwo=document.querySelector('.wheel_status_sub_level_2')
             chromaticElementTwo.style.setProperty(`--set-${colorName}colorwheel`, `${colorName}`);// aplica el color en la rueda
+            secondarychromaticWheelColors.splice(secondarychromaticWheelColors.indexOf(colorName), 1);
              console.log(colorName)
+            updateColorToSelect()
         }else{
             console.log('a pensar') // Ver que hacer o prevenir multiples clicks
         }
