@@ -43,7 +43,7 @@ function addButtonsToChangeColors(){
             if(Object.values(pickTwoColors).includes('')  && !Object.values(pickTwoColors).includes(colorName)){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
                 let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
                 pickTwoColors[`color${positionToAddColor + 1}`] = `${colorName}`
-                console.log(pickTwoColors)
+                btnRed.style.boxShadow='0px 0px 15px red'
                 setTimeout(() => {
                     getMixedColor()
                 }, 500);
@@ -51,6 +51,7 @@ function addButtonsToChangeColors(){
                 console.log('ya hay dos colores elegidos')
                 let findColorToRemoveIt=Object.values(pickTwoColors).findIndex((e)=> e === colorName)
                 pickTwoColors[`color${findColorToRemoveIt + 1}`] = ''
+                btnRed.style.boxShadow=''
             }
         }
     })
@@ -65,7 +66,7 @@ function addButtonsToChangeColors(){
             if(Object.values(pickTwoColors).includes('')  && !Object.values(pickTwoColors).includes(colorName)){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
                 let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
                 pickTwoColors[`color${positionToAddColor + 1}`] = `${colorName}`
-                console.log(pickTwoColors)
+                btnBlue.style.boxShadow='0px 0px 15px blue'
                 setTimeout(() => {
                     getMixedColor()
                 }, 500);
@@ -73,6 +74,7 @@ function addButtonsToChangeColors(){
                 console.log('ya hay dos colores elegidos')
                 let findColorToRemoveIt=Object.values(pickTwoColors).findIndex((e)=> e === colorName)
                 pickTwoColors[`color${findColorToRemoveIt + 1}`] = ''
+                btnBlue.style.boxShadow=''
             }
         }
     })
@@ -87,7 +89,7 @@ function addButtonsToChangeColors(){
             if(Object.values(pickTwoColors).includes('')  && !Object.values(pickTwoColors).includes(colorName)){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
                 let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
                 pickTwoColors[`color${positionToAddColor + 1}`] = `${colorName}`
-                console.log(pickTwoColors)
+                btnYellow.style.boxShadow='0px 0px 15px yellow'
                 setTimeout(() => {
                     getMixedColor()
                 }, 500);
@@ -95,6 +97,7 @@ function addButtonsToChangeColors(){
                 console.log('ya hay dos colores elegidos')
                 let findColorToRemoveIt=Object.values(pickTwoColors).findIndex((e)=> e === colorName)
                 pickTwoColors[`color${findColorToRemoveIt + 1}`] = ''
+                btnYellow.style.boxShadow=''
             }
         }
     })

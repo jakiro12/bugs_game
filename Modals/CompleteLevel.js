@@ -1,9 +1,10 @@
-import { chromaticWheelColors, secondarychromaticWheelColors } from "../GlobarVars/chromaticColors"
+import {  secondarychromaticWheelColors } from "../GlobarVars/chromaticColors"
 
 const modalBox=document.createElement('main')
 const modalContainer=document.createElement('article')
 const btnCloseModal=document.createElement('button')
     modalContainer.className='alert'
+    modalContainer.id='modal_level_info'
     modalBox.className='modal_box_information'
     btnCloseModal.innerText='cerrar'
 export function levelSuccesslful(){
@@ -15,7 +16,8 @@ export function levelSuccesslful(){
     gameView.appendChild(modalContainer)
     modalBox.innerText='nivel completado'
     modalBox.appendChild(btnCloseModal)
-    btnCloseModal.addEventListener('click',()=>{
+
+    function subLevel_1(){
         secondarychromaticWheelColors.push(secondaryColors[0])
         secondarychromaticWheelColors.push(secondaryColors[1])
         secondarychromaticWheelColors.push(secondaryColors[2])
@@ -24,7 +26,13 @@ export function levelSuccesslful(){
             bugRequired.style.backgroundColor = secondarychromaticWheelColors[0];
             wheelSettings.classList.remove(wheelSettings.classList[0])
             wheelSettings.className='wheel_status_sub_level_2'
-          
+        }
+    }
+
+    btnCloseModal.addEventListener('click',()=>{
+        console.log(wheelSettings.classList)
+        if(wheelSettings.classList[0] === 'wheel_status_sub_level_1'){
+            subLevel_1()
         }
     })
 
