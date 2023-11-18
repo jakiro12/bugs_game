@@ -1,4 +1,5 @@
-import {  secondarychromaticWheelColors, ternarychromaticWheelColors } from "../GlobarVars/chromaticColors"
+import {  secondarychromaticWheelColors, ternarychromaticWheelColors } from "../GlobarVars/chromaticColors";
+import { levelSuccessDescription } from "../GlobarVars/describeInfo";
 
 const modalBox=document.createElement('main')
 const modalContainer=document.createElement('article')
@@ -17,10 +18,10 @@ export function levelSuccesslful(){
     modalContainer.appendChild(modalBox)
     const gameView=document.getElementById('phaser-container')
     gameView.appendChild(modalContainer)
-    parrfAboutLevel.textContent='nivel 1 completado'
+    parrfAboutLevel.textContent=levelSuccessDescription[0]
     modalBox.appendChild(parrfAboutLevel)
     modalBox.appendChild(btnCloseModal)
-
+    
     function subLevel_1(){
         secondarychromaticWheelColors.push(secondaryColors[0])
         secondarychromaticWheelColors.push(secondaryColors[1])
@@ -30,6 +31,8 @@ export function levelSuccesslful(){
             bugRequired.style.backgroundColor = secondarychromaticWheelColors[0];
             wheelSettings.classList.remove(wheelSettings.classList[0])
             wheelSettings.className='wheel_status_sub_level_2'
+            levelSuccessDescription[0]='Sub nivel 2 completado'
+            parrfAboutLevel.textContent=levelSuccessDescription[0]
         }
     }
     function subLevel_2(){
@@ -47,7 +50,6 @@ export function levelSuccesslful(){
 
     }
     btnCloseModal.addEventListener('click',()=>{
-        console.log(wheelSettings.classList)
         if(wheelSettings.classList[0] === 'wheel_status_sub_level_1'){
             subLevel_1()
         }else if(wheelSettings.classList[0] === 'wheel_status_sub_level_2'){

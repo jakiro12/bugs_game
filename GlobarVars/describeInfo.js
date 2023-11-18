@@ -1,0 +1,1 @@
+export const levelSuccessDescription= ['Sub nivel 1 completado']

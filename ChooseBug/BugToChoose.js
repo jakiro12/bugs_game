@@ -1,4 +1,5 @@
 import { chromaticWheelColors,secondarychromaticWheelColors } from "../GlobarVars/chromaticColors";
+import { levelSuccessDescription } from "../GlobarVars/describeInfo";
 import { levelSuccesslful } from "../Modals/CompleteLevel";
 
 const boxToShowCurrentBug=document.createElement('div')
@@ -19,6 +20,7 @@ function handleBugToChoose (){
     }
     function subLevel_2Complete(){
         const getModalContainer=document.getElementById('modal_level_info')
+        console.log(levelSuccessDescription)
         setTimeout(() => {
            console.log('no ejecutar levelSuccesslful, sino agregar de nuevo la class')
            getModalContainer.className='alert'
