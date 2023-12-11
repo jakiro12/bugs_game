@@ -1,4 +1,4 @@
-import { pickTwoColors, secondarychromaticWheelColors, chromaticWheelColors, colorCombinations } from "../GlobarVars/chromaticColors"
+import { pickTwoColors, secondarychromaticWheelColors, chromaticWheelColors, colorCombinations, ternarychromaticWheelColors } from "../GlobarVars/chromaticColors"
 
 function addButtonsToChangeColors(){
     let sectionToBtns=document.querySelector('.footer_game_options')
@@ -7,18 +7,32 @@ function addButtonsToChangeColors(){
     let btnBlue=document.createElement('button')
     let btnYellow=document.createElement('button')
     
+    let btnGreen=document.createElement('button')
+    let btnPurple=document.createElement('button')
+    let btnOrange=document.createElement('button')
+
     sectionToBtns.appendChild(btnBlue)
     sectionToBtns.appendChild(btnYellow)
     sectionToBtns.appendChild(btnRed)
+    sectionToBtns.appendChild(btnGreen)
+    sectionToBtns.appendChild(btnPurple)
+    sectionToBtns.appendChild(btnOrange)
+
 
     btnBlue.style.backgroundColor='blue'
     btnRed.style.backgroundColor='red'
     btnYellow.style.backgroundColor='yellow'
-
+    btnGreen.style.backgroundColor='green'
+    btnPurple.style.backgroundColor='purple'
+    btnOrange.style.backgroundColor='orange'
 
     btnRed.className='btn_to_handle_colors'
     btnBlue.className='btn_to_handle_colors'
     btnYellow.className='btn_to_handle_colors'
+    btnGreen.className='btn_to_handle_colors_secondary'
+    btnPurple.className='btn_to_handle_colors_secondary'
+    btnOrange.className='btn_to_handle_colors_secondary'
+
     function getMixedColor() {
         // demora 0.5 segundos en cambiar al color deseado
         if(!Object.values(pickTwoColors).includes('')){
@@ -27,6 +41,8 @@ function addButtonsToChangeColors(){
             changeColorBugsTag.forEach((bug) => {
                 bug.style.setProperty('--set-colorbtn', `${colorCombinations[`${sortedColors}`]}`);
             });
+            console.log(pickTwoColors)
+            console.log(colorCombinations)
         }else{
             console.log('falta un color')
         }
@@ -39,7 +55,7 @@ function addButtonsToChangeColors(){
                 bug.style.setProperty('--set-colorbtn', `${colorName}`);
             });
         }
-        if (secondarychromaticWheelColors.length > 0){
+        if (secondarychromaticWheelColors.length > 0 || ternarychromaticWheelColors.length > 0){
             if(Object.values(pickTwoColors).includes('')  && !Object.values(pickTwoColors).includes(colorName)){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
                 let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
                 pickTwoColors[`color${positionToAddColor + 1}`] = `${colorName}`
@@ -48,7 +64,6 @@ function addButtonsToChangeColors(){
                     getMixedColor()
                 }, 500);
             }else{
-                console.log('ya hay dos colores elegidos')
                 let findColorToRemoveIt=Object.values(pickTwoColors).findIndex((e)=> e === colorName)
                 pickTwoColors[`color${findColorToRemoveIt + 1}`] = ''
                 btnRed.style.boxShadow=''
@@ -62,7 +77,7 @@ function addButtonsToChangeColors(){
                 bug.style.setProperty('--set-colorbtn', `${colorName}`);
             });
         }
-        if (secondarychromaticWheelColors.length > 0){
+        if (secondarychromaticWheelColors.length > 0 || ternarychromaticWheelColors.length > 0){
             if(Object.values(pickTwoColors).includes('')  && !Object.values(pickTwoColors).includes(colorName)){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
                 let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
                 pickTwoColors[`color${positionToAddColor + 1}`] = `${colorName}`
@@ -71,7 +86,6 @@ function addButtonsToChangeColors(){
                     getMixedColor()
                 }, 500);
             }else{
-                console.log('ya hay dos colores elegidos')
                 let findColorToRemoveIt=Object.values(pickTwoColors).findIndex((e)=> e === colorName)
                 pickTwoColors[`color${findColorToRemoveIt + 1}`] = ''
                 btnBlue.style.boxShadow=''
@@ -85,7 +99,7 @@ function addButtonsToChangeColors(){
                 bug.style.setProperty('--set-colorbtn', `${colorName}`);
             });
         }
-        if (secondarychromaticWheelColors.length > 0){
+        if (secondarychromaticWheelColors.length > 0 || ternarychromaticWheelColors.length > 0){
             if(Object.values(pickTwoColors).includes('')  && !Object.values(pickTwoColors).includes(colorName)){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
                 let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
                 pickTwoColors[`color${positionToAddColor + 1}`] = `${colorName}`
@@ -94,10 +108,60 @@ function addButtonsToChangeColors(){
                     getMixedColor()
                 }, 500);
             }else{
-                console.log('ya hay dos colores elegidos')
                 let findColorToRemoveIt=Object.values(pickTwoColors).findIndex((e)=> e === colorName)
                 pickTwoColors[`color${findColorToRemoveIt + 1}`] = ''
                 btnYellow.style.boxShadow=''
+            }
+        }
+    })
+    btnGreen.addEventListener('click',()=>{
+        let colorName='green'
+        if(ternarychromaticWheelColors.length > 0){
+            if(Object.values(pickTwoColors).includes('')  && !Object.values(pickTwoColors).includes(colorName)){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
+                let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
+                pickTwoColors[`color${positionToAddColor + 1}`] = `${colorName}`
+                btnGreen.style.boxShadow='0px 0px 15px green'
+                setTimeout(() => {
+                    getMixedColor()
+                }, 500);
+            }else{
+                let findColorToRemoveIt=Object.values(pickTwoColors).findIndex((e)=> e === colorName)
+                pickTwoColors[`color${findColorToRemoveIt + 1}`] = ''
+                btnGreen.style.boxShadow=''
+            }
+        }
+    })
+    btnPurple.addEventListener('click',()=>{
+        let colorName='purple'
+        if(ternarychromaticWheelColors.length > 0){
+            if(Object.values(pickTwoColors).includes('')  && !Object.values(pickTwoColors).includes(colorName)){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
+                let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
+                pickTwoColors[`color${positionToAddColor + 1}`] = `${colorName}`
+                btnPurple.style.boxShadow='0px 0px 15px purple'
+                setTimeout(() => {
+                    getMixedColor()
+                }, 500);
+            }else{
+                let findColorToRemoveIt=Object.values(pickTwoColors).findIndex((e)=> e === colorName)
+                pickTwoColors[`color${findColorToRemoveIt + 1}`] = ''
+                btnPurple.style.boxShadow=''
+            }
+        }
+    })
+    btnOrange.addEventListener('click',()=>{
+        let colorName='orange'
+        if(ternarychromaticWheelColors.length > 0){
+            if(Object.values(pickTwoColors).includes('')  && !Object.values(pickTwoColors).includes(colorName)){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
+                let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
+                pickTwoColors[`color${positionToAddColor + 1}`] = `${colorName}`
+                btnOrange.style.boxShadow='0px 0px 15px orange'
+                setTimeout(() => {
+                    getMixedColor()
+                }, 500);
+            }else{
+                let findColorToRemoveIt=Object.values(pickTwoColors).findIndex((e)=> e === colorName)
+                pickTwoColors[`color${findColorToRemoveIt + 1}`] = ''
+                btnOrange.style.boxShadow=''
             }
         }
     })

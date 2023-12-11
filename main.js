@@ -16,14 +16,6 @@ class MainScene extends Scene {
     create() {
         // Obtener las dimensiones de la ventana
         const section2 = document.querySelector('.section-2');
-
-        // Obtén el ancho y alto de la etiqueta de la sección 2
-        const width = section2.offsetWidth;
-        const height = section2.offsetHeight;
-
-        // Agregar la imagen y escalarla para ajustar al ancho y alto de la sección
-       //  this.add.image(width / 2, height / 2, 'example').setDisplaySize(width, height).setDepth(-1);
-
     }
 }
 
@@ -41,7 +33,7 @@ function addSections() {
     sectionsHeaderIndsideGameView.className='header_game_options';
     sectionsFooterIndsideGameView.className='footer_game_options';
     sectionsMainIndsideGameView.className='main_game_options'
-
+    sectionsFooterIndsideGameView.id='handle_colors_section'
     for (let i = 1; i <= 3; i++) {
         const section = document.createElement('section');
   

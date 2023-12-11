@@ -13,7 +13,7 @@ const parrfAboutLevel=document.createElement('p')
 export function levelSuccesslful(){
     const wheelSettings=document.getElementById('wheel')
     const secondaryColors=['purple','green','orange'] 
-    const ternaryColors=['blueviolet','orangered','chartreuse','teal','violet','magenta']
+    const ternaryColors=['blueviolet','orangered','chartreuse','teal','goldenrod','magenta']
     const bugRequired=document.querySelector('.bug_to_pick')
     modalContainer.appendChild(modalBox)
     const gameView=document.getElementById('phaser-container')
@@ -43,9 +43,16 @@ export function levelSuccesslful(){
         ternarychromaticWheelColors.push(ternaryColors[4])
         ternarychromaticWheelColors.push(ternaryColors[5])
         modalContainer.className=''
-        if (secondarychromaticWheelColors.length > 0) {
+        let setSecondaryBtnToChangeColors=document.querySelectorAll('.btn_to_handle_colors_secondary')
+        let setFooterContainerBtns=document.getElementById('handle_colors_section')
+        if (ternarychromaticWheelColors.length > 0) {
             bugRequired.style.backgroundColor = ternarychromaticWheelColors[0];
-            
+            wheelSettings.className='wheel_status_sub_level_3'
+            setSecondaryBtnToChangeColors.forEach(btn => {
+            btn.style.setProperty('--set-displayBtnSecondaries', 'block');
+          });
+          setFooterContainerBtns.classList.remove(setFooterContainerBtns.classList[0])
+          setFooterContainerBtns.className='footer_game_options_final_level'
         }
 
     }

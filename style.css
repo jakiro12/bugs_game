@@ -6,6 +6,7 @@
   --set-purplecolorwheel:grey;
   --set-greencolorwheel:grey;
   --set-orangecolorwheel:grey;
+  --set-displayBtnSecondaries:none;
 }
 #app{
   height: 100vh;
@@ -63,6 +64,15 @@
   justify-content: space-around;
   margin: auto;
 }
+.footer_game_options_final_level{
+  outline: 2px solid black;
+  width: 70%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(2,1fr);
+  margin: auto;
+}
 .btn_to_handle_colors{
   width: 30px;
   height: 30px;
@@ -70,7 +80,17 @@
   border: none;
   cursor: pointer;
   z-index: 1;
-
+  margin: auto;
+}
+.btn_to_handle_colors_secondary{
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  display: var(--set-displayBtnSecondaries);
+  margin: auto;
 }
 .bugs_styles{
   background-color: var(--set-colorbtn);
@@ -124,6 +144,17 @@
   background-image: conic-gradient(
      yellow 0deg 60deg,  var(--set-orangecolorwheel) 60deg 120deg,  red 120deg 180deg,var(--set-greencolorwheel) 180deg 240deg, blue 240deg 300deg, var(--set-purplecolorwheel) 300deg 360deg);
   transform: rotateZ(-30deg);
+}
+.wheel_status_sub_level_3{
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid #e0c872;
+  margin: auto;
+  background-image: conic-gradient(
+     yellow 0deg 30deg,grey 30deg 60deg , orange 60deg 90deg,grey 90deg 120deg,  red 120deg 150deg,grey  150deg 180deg, green 180deg 210deg,grey  210deg 240deg, blue 240deg 270deg,grey 270deg 300deg, purple 300deg 330deg, grey 330deg 360deg);
+  transform: rotateZ(-15deg);
+
 }
 .wheel_status{
   width: 140px;

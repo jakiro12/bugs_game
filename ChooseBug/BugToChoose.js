@@ -1,4 +1,4 @@
-import { chromaticWheelColors,secondarychromaticWheelColors } from "../GlobarVars/chromaticColors";
+import { chromaticWheelColors,secondarychromaticWheelColors, ternarychromaticWheelColors } from "../GlobarVars/chromaticColors";
 import { levelSuccessDescription } from "../GlobarVars/describeInfo";
 import { levelSuccesslful } from "../Modals/CompleteLevel";
 
@@ -50,6 +50,7 @@ function handleBugToChoose (){
     }
     updateColorToSelect()
     bugRequired.style.backgroundColor=`${chromaticWheelColors[0]}`
+    //ELEGIR INSECTOS AQUI ABAJO
     allBugsMoving[0].addEventListener('click',()=>{
         let colorName= getComputedStyle(allBugsMoving[0]).getPropertyValue('--set-colorbtn') //los estilos de ese insecto
         if(colorName === chromaticWheelColors[0] && chromaticWheelColors.includes(colorName)){ // si el color del insecto coincide al de la primera posicion del array ejecuto
@@ -63,6 +64,8 @@ function handleBugToChoose (){
             secondarychromaticWheelColors.splice(secondarychromaticWheelColors.indexOf(colorName), 1);
             updateSecondaryColors()
             console.log(secondarychromaticWheelColors)
+        }else if(ternarychromaticWheelColors.length > 0 && colorName === ternarychromaticWheelColors[0]){
+            console.log('color correcto')
         }
         else{
             console.log('a pensar') // Ver que hacer o prevenir multiples clicks
@@ -81,6 +84,8 @@ function handleBugToChoose (){
             secondarychromaticWheelColors.splice(secondarychromaticWheelColors.indexOf(colorName), 1);
             updateSecondaryColors()
             console.log(secondarychromaticWheelColors)
+        }else if(ternarychromaticWheelColors.length > 0 && colorName === ternarychromaticWheelColors[0]){
+            console.log('color correcto')
         }else {
             console.log('pensar') // Ver que hacer o prevenir multiples clicks
         }
@@ -99,8 +104,11 @@ function handleBugToChoose (){
             secondarychromaticWheelColors.splice(secondarychromaticWheelColors.indexOf(colorName), 1);
             updateSecondaryColors()
             console.log(secondarychromaticWheelColors)
+        }else if(ternarychromaticWheelColors.length > 0 && colorName === ternarychromaticWheelColors[0]){
+            console.log('color correcto')
         }else{
             console.log('a pensar') // Ver que hacer o prevenir multiples clicks
+
         }
     })
 }
