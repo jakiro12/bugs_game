@@ -14,5 +14,8 @@ export const colorCombinations = {
     greenyellow:'chartreuse',
     bluegreen:'teal',
     purplered:'magenta',
-    orangeyellow:'goldenrod'
+    orangeyellow:'goldenrod',
+    greenred:'brown',
+    purpleyellow:'brown',
+    blueorange:'brown',
 };
