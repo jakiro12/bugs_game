@@ -6,6 +6,12 @@
   --set-purplecolorwheel:grey;
   --set-greencolorwheel:grey;
   --set-orangecolorwheel:grey;
+  --set-bluevioletcolorwheel:grey;
+  --set-orangeredcolorwheel:grey;
+  --set-chartreusecolorwheel:grey;
+  --set-tealcolorwheel:grey;
+  --set-magentacolorwheel:grey;
+  --set-goldenrodcolorwheel:grey;
   --set-displayBtnSecondaries:none;
 }
 #app{
@@ -152,7 +158,7 @@
   border: 4px solid #e0c872;
   margin: auto;
   background-image: conic-gradient(
-     yellow 0deg 30deg,grey 30deg 60deg , orange 60deg 90deg,grey 90deg 120deg,  red 120deg 150deg,grey  150deg 180deg, green 180deg 210deg,grey  210deg 240deg, blue 240deg 270deg,grey 270deg 300deg, purple 300deg 330deg, grey 330deg 360deg);
+     red 0deg 30deg,var(--set-orangeredcolorwheel) 30deg 60deg , orange 60deg 90deg,var(--set-goldenrodcolorwheel) 90deg 120deg,  yellow 120deg 150deg,var(--set-chartreusecolorwheel)  150deg 180deg, green 180deg 210deg,var(--set-tealcolorwheel)  210deg 240deg, blue 240deg 270deg,var(--set-bluevioletcolorwheel) 270deg 300deg, purple 300deg 330deg, var(--set-magentacolorwheel) 330deg 360deg);
   transform: rotateZ(-15deg);
 
 }
