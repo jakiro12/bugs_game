@@ -74,6 +74,11 @@
   background:linear-gradient(180deg,#74A097,#648C83);
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
+  border-top: 2px solid #648C83;
+  border-left: 2px solid #648C83;
+  border-right: 2px solid #648C83;
+
+
 }
 .footer_game_options_final_level{
   width: 70%;
@@ -85,6 +90,7 @@
   grid-template-columns: repeat(3,1fr);
   grid-template-rows: repeat(2,1fr);
   margin: auto;
+  border-top: 2px solid #74A097;
 }
 .btn_to_handle_colors{
   width: 30px;
@@ -136,6 +142,16 @@
   border-bottom: 0;
   margin-left: 15px;
   margin-bottom: -33px;
+}
+.box_about_this_level:nth-child(2){
+  display: grid;
+  cursor: pointer;
+  width: 60%;
+  height: 30%;
+  background: url('./icons_/guide-book\ 1.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 10px;
 }
 .title_box_information{
   width: 90%;
@@ -232,16 +248,20 @@
   height: 60px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  background:linear-gradient(180deg,#74A097,#648C83);
+  background:linear-gradient(90deg,#85BDAE,#38584D);
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top: 2px solid #648C83;
+  border-right: 2px solid #648C83;
+  border-bottom: 2px solid #648C83;
+  
 }
 .bug_to_pick{
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 2px solid black;
+  border: 2px solid white;
 }
 .alert{
   z-index: 1;
