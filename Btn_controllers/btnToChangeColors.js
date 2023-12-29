@@ -57,18 +57,21 @@ function addButtonsToChangeColors(){
             btnBlue.style.opacity='0.7'
         }
         if (secondarychromaticWheelColors.length > 0 || ternarychromaticWheelColors.length > 0){
-            if(Object.values(pickTwoColors).includes('')  && !Object.values(pickTwoColors).includes(colorName) ){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
+            if(Object.values(pickTwoColors).includes('')  && Object.values(pickTwoColors).includes(colorName) === false ){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
                 let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
-                pickTwoColors[`color${positionToAddColor + 1}`] = `${colorName}` //aqui esta el error agrega un indice mas
+                console.log(positionToAddColor)
+                pickTwoColors[`color${positionToAddColor}`] = `${colorName}` //aqui esta el error agrega un indice mas
                 btnRed.style.boxShadow='0px 0px 15px red'
-                console.log(pickTwoColors)
                 setTimeout(() => {
                     getMixedColor()
                 }, 500);
-            }else{
+            }else if(Object.values(pickTwoColors).includes(colorName) === true){
                 let findColorToRemoveIt=Object.values(pickTwoColors).findIndex((e)=> e === colorName)
-                pickTwoColors[`color${findColorToRemoveIt + 1}`] = '' // cuando lo remuevo estoy agregando otro :D
+                console.log(findColorToRemoveIt)
+                pickTwoColors[`color${findColorToRemoveIt}`] = '' // cuando lo remuevo estoy agregando otro :D
                 btnRed.style.boxShadow=''
+            }else{
+                return // caso en que quiera agregar un color cuando ya hay dos
             }
         }
     })
@@ -83,18 +86,22 @@ function addButtonsToChangeColors(){
             btnRed.style.opacity='0.7'
         }
         if (secondarychromaticWheelColors.length > 0 || ternarychromaticWheelColors.length > 0){
-            if(Object.values(pickTwoColors).includes('')  && !Object.values(pickTwoColors).includes(colorName)){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
+            if(Object.values(pickTwoColors).includes('')  && Object.values(pickTwoColors).includes(colorName) === false){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
                 let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
-                pickTwoColors[`color${positionToAddColor + 1}`] = `${colorName}` //aqui esta el error agrega un indice mas
+                console.log(positionToAddColor)
+                pickTwoColors[`color${positionToAddColor}`] = `${colorName}` //aqui esta el error agrega un indice mas
                 btnBlue.style.boxShadow='0px 0px 15px blue'
                 console.log(pickTwoColors)
                 setTimeout(() => {
                     getMixedColor()
                 }, 500);
-            }else{
+            }else if(Object.values(pickTwoColors).includes(colorName) === true){
                 let findColorToRemoveIt=Object.values(pickTwoColors).findIndex((e)=> e === colorName)
-                pickTwoColors[`color${findColorToRemoveIt + 1}`] = ''
+                console.log(findColorToRemoveIt)
+                pickTwoColors[`color${findColorToRemoveIt}`] = ''
                 btnBlue.style.boxShadow=''
+            }else{
+                return // por si ya hay 2 colores y quiero meter otro
             }
         }
     })
@@ -109,18 +116,22 @@ function addButtonsToChangeColors(){
             btnRed.style.opacity='0.7'
         }
         if (secondarychromaticWheelColors.length > 0 || ternarychromaticWheelColors.length > 0){
-            if(Object.values(pickTwoColors).includes('')  && !Object.values(pickTwoColors).includes(colorName)){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
+            if(Object.values(pickTwoColors).includes('')  && Object.values(pickTwoColors).includes(colorName) === false){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
                 let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
-                pickTwoColors[`color${positionToAddColor + 1}`] = `${colorName}` //aqui esta el error agrega un indice mas
+                console.log(positionToAddColor)
+                pickTwoColors[`color${positionToAddColor}`] = `${colorName}` //aqui esta el error agrega un indice mas
                 btnYellow.style.boxShadow='0px 0px 15px yellow'
                 console.log(pickTwoColors)
                 setTimeout(() => {
                     getMixedColor()
                 }, 500);
-            }else{
+            }else if(Object.values(pickTwoColors).includes(colorName) === true){
                 let findColorToRemoveIt=Object.values(pickTwoColors).findIndex((e)=> e === colorName)
-                pickTwoColors[`color${findColorToRemoveIt + 1}`] = ''
+                console.log(findColorToRemoveIt)
+                pickTwoColors[`color${findColorToRemoveIt}`] = ''
                 btnYellow.style.boxShadow=''
+            }else{
+                return // por si ya hay 2 colores.- -
             }
         }
     })
@@ -129,14 +140,14 @@ function addButtonsToChangeColors(){
         if(ternarychromaticWheelColors.length > 0){
             if(Object.values(pickTwoColors).includes('')  && !Object.values(pickTwoColors).includes(colorName)){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
                 let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
-                pickTwoColors[`color${positionToAddColor + 1}`] = `${colorName}`
+                pickTwoColors[`color${positionToAddColor}`] = `${colorName}`
                 btnGreen.style.boxShadow='0px 0px 15px green'
                 setTimeout(() => {
                     getMixedColor()
                 }, 500);
             }else{
                 let findColorToRemoveIt=Object.values(pickTwoColors).findIndex((e)=> e === colorName)
-                pickTwoColors[`color${findColorToRemoveIt + 1}`] = ''
+                pickTwoColors[`color${findColorToRemoveIt}`] = ''
                 btnGreen.style.boxShadow=''
             }
         }
@@ -146,14 +157,14 @@ function addButtonsToChangeColors(){
         if(ternarychromaticWheelColors.length > 0){
             if(Object.values(pickTwoColors).includes('')  && !Object.values(pickTwoColors).includes(colorName)){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
                 let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
-                pickTwoColors[`color${positionToAddColor + 1}`] = `${colorName}`
+                pickTwoColors[`color${positionToAddColor}`] = `${colorName}`
                 btnPurple.style.boxShadow='0px 0px 15px purple'
                 setTimeout(() => {
                     getMixedColor()
                 }, 500);
             }else{
                 let findColorToRemoveIt=Object.values(pickTwoColors).findIndex((e)=> e === colorName)
-                pickTwoColors[`color${findColorToRemoveIt + 1}`] = ''
+                pickTwoColors[`color${findColorToRemoveIt}`] = ''
                 btnPurple.style.boxShadow=''
             }
         }
@@ -163,14 +174,14 @@ function addButtonsToChangeColors(){
         if(ternarychromaticWheelColors.length > 0){
             if(Object.values(pickTwoColors).includes('')  && !Object.values(pickTwoColors).includes(colorName)){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
                 let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
-                pickTwoColors[`color${positionToAddColor + 1}`] = `${colorName}`
+                pickTwoColors[`color${positionToAddColor}`] = `${colorName}`
                 btnOrange.style.boxShadow='0px 0px 15px orange'
                 setTimeout(() => {
                     getMixedColor()
                 }, 500);
             }else{
                 let findColorToRemoveIt=Object.values(pickTwoColors).findIndex((e)=> e === colorName)
-                pickTwoColors[`color${findColorToRemoveIt + 1}`] = ''
+                pickTwoColors[`color${findColorToRemoveIt}`] = ''
                 btnOrange.style.boxShadow=''
             }
         }
