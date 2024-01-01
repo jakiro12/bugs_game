@@ -27,6 +27,8 @@ export function levelSuccesslful(){
         secondarychromaticWheelColors.push(secondaryColors[1])
         secondarychromaticWheelColors.push(secondaryColors[2])
         modalContainer.className=''
+        let bar_progress_status=document.querySelector('.progess_bar > div')
+        bar_progress_status.style.setProperty('--set-barprogress','0%')
         if (secondarychromaticWheelColors.length > 0) {
             bugRequired.style.backgroundColor = secondarychromaticWheelColors[0];
             wheelSettings.classList.remove(wheelSettings.classList[0])

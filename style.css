@@ -13,6 +13,7 @@
   --set-magentacolorwheel:white;
   --set-goldenrodcolorwheel:white;
   --set-displayBtnSecondaries:none;
+  --set-barprogress:0%;
 }
 #app{
   height: 100vh;
@@ -230,11 +231,11 @@
 
 }
 .progess_bar > div{
-  width: 35%;
+  width: var(--set-barprogress);/*variable de progreso del nivel */
   height: 100%;
   background: linear-gradient(#F26665,#C85352);
   border-radius: 10px / 50%;
-  outline: 1px solid black;
+  transition: all 1s;
 }
 
 .btn_settings_ui{

@@ -16,7 +16,7 @@ function handleBugToChoose (){
     function subLevel_1Complete(){
         setTimeout(() => {
             levelSuccesslful();
-          }, 1000);
+          }, 2000);
     }
     function subLevel_2Complete(){
         const getModalContainer=document.getElementById('modal_level_info')
@@ -26,10 +26,17 @@ function handleBugToChoose (){
            getModalContainer.className='alert'
           }, 1000);
     }
+    let initial_amount=chromaticWheelColors.length
     function updateColorToSelect(){
         if (chromaticWheelColors.length > 0) {
             bugRequired.style.backgroundColor = chromaticWheelColors[0];
-        }else if(!chromaticWheelColors.includes('yellow')){
+            let bar_progress_status=document.querySelector('.progess_bar > div')
+            let calculate_percent=100 - (( chromaticWheelColors.length/initial_amount ) * 100)
+             bar_progress_status.style.setProperty('--set-barprogress',`${calculate_percent}%`)
+        }else if(!chromaticWheelColors.includes('yellow')){ // corregir el tema de la barra de carga
+            let bar_progress_status=document.querySelector('.progess_bar > div')
+            let calculate_percent=100 - (( chromaticWheelColors.length/initial_amount ) * 100)
+            bar_progress_status.style.setProperty('--set-barprogress',`${calculate_percent}%`)
             subLevel_1Complete()
             bugRequired.style.backgroundColor = "grey"; // Si el array esta vacio dejar este color
         }else {
@@ -61,7 +68,7 @@ function handleBugToChoose (){
     }
     updateColorToSelect()
     bugRequired.style.backgroundColor=`${chromaticWheelColors[0]}`
-    //ELEGIR INSECTOS AQUI ABAJO
+    //ELEGIR INSECTOS AQUI ABAJO    --- Se aplica lo mismo a todos los insectos uno por uno, no es dinamico sino imperativo
     allBugsMoving[0].addEventListener('click',()=>{
         let colorName= getComputedStyle(allBugsMoving[0]).getPropertyValue('--set-colorbtn') //los estilos de ese insecto
         if(colorName === chromaticWheelColors[0] && chromaticWheelColors.includes(colorName)){ // si el color del insecto coincide al de la primera posicion del array ejecuto
