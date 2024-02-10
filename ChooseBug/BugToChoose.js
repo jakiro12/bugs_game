@@ -33,7 +33,7 @@ function handleBugToChoose (){
             let bar_progress_status=document.querySelector('.progess_bar > div')
             let calculate_percent=100 - (( chromaticWheelColors.length/initial_amount ) * 100)
              bar_progress_status.style.setProperty('--set-barprogress',`${calculate_percent}%`)
-        }else if(!chromaticWheelColors.includes('yellow')){ // corregir el tema de la barra de carga
+        }else if(chromaticWheelColors.length === 0){ // corregir el tema de la barra de carga
             let bar_progress_status=document.querySelector('.progess_bar > div')
             let calculate_percent=100 - (( chromaticWheelColors.length/initial_amount ) * 100)
             bar_progress_status.style.setProperty('--set-barprogress',`${calculate_percent}%`)

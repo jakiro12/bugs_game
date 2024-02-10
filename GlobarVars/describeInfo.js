@@ -1,1 +1,1 @@
-export const levelSuccessDescription= ['Sub nivel 1 completado']
+export const levelSuccessDescription= ['nivel 1 completado, ahora puede elegir dos colores a la vez']

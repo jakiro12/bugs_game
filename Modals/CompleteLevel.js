@@ -8,7 +8,7 @@ const parrfAboutLevel=document.createElement('p')
     modalContainer.className='alert'
     modalContainer.id='modal_level_info'
     modalBox.className='modal_box_information'
-    btnCloseModal.innerText='cerrar'
+    btnCloseModal.innerText='X'
     parrfAboutLevel.className='alert_information'
 export function levelSuccesslful(){
     const wheelSettings=document.getElementById('wheel')
@@ -23,12 +23,12 @@ export function levelSuccesslful(){
     modalBox.appendChild(btnCloseModal)
     
     function subLevel_1(){
-        secondarychromaticWheelColors.push(secondaryColors[0])
+        secondarychromaticWheelColors.push(secondaryColors[0]) //Adiciono nuevos colores
         secondarychromaticWheelColors.push(secondaryColors[1])
-        secondarychromaticWheelColors.push(secondaryColors[2])
+        secondarychromaticWheelColors.push(secondaryColors[2]) //Fin nuevos colores
         modalContainer.className=''
         let bar_progress_status=document.querySelector('.progess_bar > div')
-        bar_progress_status.style.setProperty('--set-barprogress','0%')
+        bar_progress_status.style.setProperty('--set-barprogress','0%') //Reinicia la barra de progreso
         if (secondarychromaticWheelColors.length > 0) {
             bugRequired.style.backgroundColor = secondarychromaticWheelColors[0];
             wheelSettings.classList.remove(wheelSettings.classList[0])
@@ -38,12 +38,12 @@ export function levelSuccesslful(){
         }
     }
     function subLevel_2(){
-        ternarychromaticWheelColors.push(ternaryColors[0])
+        ternarychromaticWheelColors.push(ternaryColors[0])//Adiciono nuevos colores
         ternarychromaticWheelColors.push(ternaryColors[1])
         ternarychromaticWheelColors.push(ternaryColors[2])
         ternarychromaticWheelColors.push(ternaryColors[3])
         ternarychromaticWheelColors.push(ternaryColors[4])
-        ternarychromaticWheelColors.push(ternaryColors[5])
+        ternarychromaticWheelColors.push(ternaryColors[5])//Fin nuevos colores
         modalContainer.className=''
         let setSecondaryBtnToChangeColors=document.querySelectorAll('.btn_to_handle_colors_secondary')
         let setFooterContainerBtns=document.getElementById('handle_colors_section')
