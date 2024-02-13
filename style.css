@@ -28,8 +28,8 @@
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 15% 65% 20%;
-  background: url('./metal.jpg');
-  background-size:cover;
+  background: url('./bg_game.png');
+  background-size:102% 102%;
   background-repeat: no-repeat;
   height: 95vh;
   border: 5px solid #77A49A;
@@ -62,7 +62,6 @@
   height: 90%;
   position: relative;
   margin: auto;
-  outline: 2px solid black;
 }
 .footer_game_options{
   width: 50%;
@@ -147,7 +146,7 @@
   display: grid;
   width: 60%;
   height: 30%;
-  background: url('./icons_/guide-book\ 1.png');
+  background: url('./icons_/guide-book.png');
   background-repeat: no-repeat;
   background-size: contain;
   border-radius: 10px;

@@ -10,7 +10,7 @@ class MainScene extends Scene {
     }
 
     preload() {
-        this.load.image('example', './metal.jpg');
+       
     }
 
     create() {
