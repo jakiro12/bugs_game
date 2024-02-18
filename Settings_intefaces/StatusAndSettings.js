@@ -4,13 +4,9 @@
     const btnSettignsTag=document.createElement('div')
     const btnVolume=document.createElement('button')
     const btnGear=document.createElement('button')
-    const btnHome=document.createElement('button')
-    const btnRestart=document.createElement('button')
     const progressBarSumary=document.createElement('div')
     btnSettignsTag.appendChild(btnVolume)
     btnSettignsTag.appendChild(btnGear)
-    btnSettignsTag.appendChild(btnHome)
-    btnSettignsTag.appendChild(btnRestart)
     progressBarTag.appendChild(progressBarSumary)
     wheelColorTag.className='wheel_status_sub_level_1'
     wheelColorTag.id='wheel'
@@ -21,8 +17,6 @@
     progressBarTag.setAttribute('min','0')
     btnVolume.className='btn_volume'
     btnGear.className='btn_volume'
-    btnHome.className='btn_volume'
-    btnRestart.className='btn_volume'
 
 function addComponentsToHandleStatusAndSettings(){
 const parentElement=document.querySelector('.game_info_and_options_2')

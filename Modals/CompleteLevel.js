@@ -33,8 +33,7 @@ export function levelSuccesslful(){
             bugRequired.style.backgroundColor = secondarychromaticWheelColors[0];
             wheelSettings.classList.remove(wheelSettings.classList[0])
             wheelSettings.className='wheel_status_sub_level_2'
-            levelSuccessDescription[0]='Sub nivel 2 completado'
-            parrfAboutLevel.textContent=levelSuccessDescription[0]
+            parrfAboutLevel.textContent=levelSuccessDescription[1]
         }
     }
     function subLevel_2(){
@@ -62,11 +61,9 @@ export function levelSuccesslful(){
         if(wheelSettings.classList[0] === 'wheel_status_sub_level_1'){
             subLevel_1()
         }else if(wheelSettings.classList[0] === 'wheel_status_sub_level_2'){
-            console.log('cerrar nivel 2')
             subLevel_2()
-            console.log(ternarychromaticWheelColors)
         }else{
-            console.log('juego terminado')
+            console.log('juego terminado') // Agregar el ultimo modal aqui
         }
     })
 

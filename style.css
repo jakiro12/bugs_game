@@ -22,6 +22,8 @@
   justify-content: space-between;
   align-items: center;
   background-color: #2b2821;
+  font-family: "Smooch Sans", sans-serif;
+  font-optical-sizing: auto;
 }
 #phaser-container{
   overflow: hidden;
@@ -90,7 +92,7 @@
   grid-template-columns: repeat(3,1fr);
   grid-template-rows: repeat(2,1fr);
   margin: auto;
-  border-top: 2px solid #74A097;
+  border: 2px solid #22A281;
 }
 .btn_to_handle_colors{
   width: 30px;
@@ -124,10 +126,11 @@
 .box_about_this_level:nth-child(1){
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 20% 80%;
+  grid-template-rows: 10% 90%;
   background-color: #08F8BD;
   border-radius: 10px;
   position: relative;
+  font-size: 18px;
 }
 .box_about_this_level:nth-child(1)::after {
   content: '';
@@ -238,11 +241,10 @@
 .btn_settings_ui{
   width: 90%;
   height: 90%;
-  outline: 2px solid black;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  grid-template-rows: repeat(2,1fr);
+  grid-template-rows: 1fr;
 }
 .btn_volume{
   width: 50px;
@@ -294,9 +296,12 @@
   height: 250px;
   border-radius: 10px;
   background: linear-gradient(180deg,#38584D,#22A281,#08F8BD,#6FA295 );
-  border: 2px solid black;
+  border: 2px solid #22A281;
   display: grid;
   place-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
 }
 .modal_box_information > button{
   cursor: pointer;
