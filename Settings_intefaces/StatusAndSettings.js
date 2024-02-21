@@ -1,5 +1,6 @@
     const wheelColorTag=document.createElement('div')
     const fireflyTag=document.createElement('div')
+    const imgContainerFly=document.createElement('div')
     const progressBarTag=document.createElement('div')
     const btnSettignsTag=document.createElement('div')
     const btnVolume=document.createElement('button')
@@ -8,6 +9,7 @@
     btnSettignsTag.appendChild(btnVolume)
     btnSettignsTag.appendChild(btnGear)
     progressBarTag.appendChild(progressBarSumary)
+    fireflyTag.appendChild(imgContainerFly)
     wheelColorTag.className='wheel_status_sub_level_1'
     wheelColorTag.id='wheel'
     fireflyTag.className='fire_fly_container'

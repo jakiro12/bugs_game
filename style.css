@@ -216,6 +216,16 @@
   margin: auto;
   border-radius: 25px /50%;
   background: linear-gradient(180deg,#38584D,#22A281,#08F8BD,#6FA295 );
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.fire_fly_container > div{
+  width: 100px;
+  height: 100px;
+  background: url('./icons_/fly.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .progess_bar{
   width: 60%;
@@ -246,14 +256,26 @@
   grid-template-columns: repeat(2,1fr);
   grid-template-rows: 1fr;
 }
-.btn_volume{
+.btn_volume:nth-child(1){
   width: 50px;
   height: 50px;
   border: 4px solid #74A097;
   cursor: pointer;
   border-radius: 5px;
   margin: auto;
-  background: url('./icons_/house.png');
+  background: url('./icons_/sound.png');
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.btn_volume:nth-child(2){
+  width: 50px;
+  height: 50px;
+  border: 4px solid #74A097;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: auto;
+  background: url('./icons_/gear.png');
   background-size: 80%;
   background-repeat: no-repeat;
   background-position: center;
