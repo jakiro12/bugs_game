@@ -40,7 +40,6 @@ function addButtonsToChangeColors(){
             changeColorBugsTag.forEach((bug) => {
                 bug.style.setProperty('--set-colorbtn', `${colorCombinations[`${sortedColors}`]}`);
             });
-            console.log(pickTwoColors)
         }else{
             console.log('falta un color')
         }
@@ -59,7 +58,6 @@ function addButtonsToChangeColors(){
         if (secondarychromaticWheelColors.length > 0 || ternarychromaticWheelColors.length > 0){
             if(Object.values(pickTwoColors).includes('')  && Object.values(pickTwoColors).includes(colorName) === false ){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
                 let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
-                console.log(positionToAddColor)
                 pickTwoColors[`color${positionToAddColor}`] = `${colorName}` //aqui esta el error agrega un indice mas
                 btnRed.style.boxShadow='0px 0px 15px red'
                 setTimeout(() => {
@@ -67,7 +65,6 @@ function addButtonsToChangeColors(){
                 }, 500);
             }else if(Object.values(pickTwoColors).includes(colorName) === true){
                 let findColorToRemoveIt=Object.values(pickTwoColors).findIndex((e)=> e === colorName)
-                console.log(findColorToRemoveIt)
                 pickTwoColors[`color${findColorToRemoveIt}`] = '' // cuando lo remuevo estoy agregando otro :D
                 btnRed.style.boxShadow=''
             }else{
@@ -88,16 +85,13 @@ function addButtonsToChangeColors(){
         if (secondarychromaticWheelColors.length > 0 || ternarychromaticWheelColors.length > 0){
             if(Object.values(pickTwoColors).includes('')  && Object.values(pickTwoColors).includes(colorName) === false){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
                 let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
-                console.log(positionToAddColor)
                 pickTwoColors[`color${positionToAddColor}`] = `${colorName}` //aqui esta el error agrega un indice mas
                 btnBlue.style.boxShadow='0px 0px 15px blue'
-                console.log(pickTwoColors)
                 setTimeout(() => {
                     getMixedColor()
                 }, 500);
             }else if(Object.values(pickTwoColors).includes(colorName) === true){
                 let findColorToRemoveIt=Object.values(pickTwoColors).findIndex((e)=> e === colorName)
-                console.log(findColorToRemoveIt)
                 pickTwoColors[`color${findColorToRemoveIt}`] = ''
                 btnBlue.style.boxShadow=''
             }else{
@@ -118,16 +112,13 @@ function addButtonsToChangeColors(){
         if (secondarychromaticWheelColors.length > 0 || ternarychromaticWheelColors.length > 0){
             if(Object.values(pickTwoColors).includes('')  && Object.values(pickTwoColors).includes(colorName) === false){ //Verificar si aun no se eligieron colores, por lo tanto ambos o uno esta vacio
                 let positionToAddColor=Object.values(pickTwoColors).findIndex((e)=> e === '')
-                console.log(positionToAddColor)
                 pickTwoColors[`color${positionToAddColor}`] = `${colorName}` //aqui esta el error agrega un indice mas
                 btnYellow.style.boxShadow='0px 0px 15px yellow'
-                console.log(pickTwoColors)
                 setTimeout(() => {
                     getMixedColor()
                 }, 500);
             }else if(Object.values(pickTwoColors).includes(colorName) === true){
                 let findColorToRemoveIt=Object.values(pickTwoColors).findIndex((e)=> e === colorName)
-                console.log(findColorToRemoveIt)
                 pickTwoColors[`color${findColorToRemoveIt}`] = ''
                 btnYellow.style.boxShadow=''
             }else{

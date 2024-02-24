@@ -165,6 +165,7 @@
   height: 90%;
   margin: auto;
   background-color: none;
+  font-weight: bolder;
 }
 .wheel_status_sub_level_1{
   width: 140px;

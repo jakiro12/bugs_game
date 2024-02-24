@@ -5,7 +5,7 @@
     titleInformationBox.innerText='¿Como jugar?'
     titleInformationBox.className='title_box_information'
     const desciptionBox=document.createElement('div')
-    desciptionBox.innerText='El juego consiste en elegir la esfera con el color que es igual al panel superior derecho dentro de la pantalla del juego, ejemplo si la esfera es azul debe elegir el color de la esfera y luego hacer click sobre alguna, cada vez la elija correctamente el color se agregara a la rueda cromatica.'
+    desciptionBox.innerText='El juego consiste en elegir la esfera con el color que es igual al panel superior izquierdo dentro de la pantalla del juego, ejemplo si la esfera es azul debe elegir el color de la esfera y luego hacer click sobre alguna, cada vez la elija una esfera con el color requerido se agrerara dicho color al circulo cromatica.'
     desciptionBox.className='description_box_information'
 
 function informationAboutPickLevel(){

@@ -54,6 +54,7 @@ export function levelSuccesslful(){
           });
           setFooterContainerBtns.classList.remove(setFooterContainerBtns.classList[0])
           setFooterContainerBtns.className='footer_game_options_final_level'
+          parrfAboutLevel.textContent=levelSuccessDescription[2]
         }
 
     }
@@ -63,7 +64,7 @@ export function levelSuccesslful(){
         }else if(wheelSettings.classList[0] === 'wheel_status_sub_level_2'){
             subLevel_2()
         }else{
-            console.log('juego terminado') // Agregar el ultimo modal aqui
+            modalContainer.className='' //Juego finalizado
         }
     })
 
