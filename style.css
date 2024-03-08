@@ -28,6 +28,7 @@
 #phaser-container{
   overflow: hidden;
   display: grid;
+  width: 48%;
   grid-template-columns: 100%;
   grid-template-rows: 15% 65% 20%;
   background: url('./bg_game.png');
@@ -337,4 +338,124 @@
 .alert_information{
   font-size: 22px;
   font-weight: bolder;
+}
+.nabvar_options{
+  display: none;
+}
+.logo_fly_mobile{
+  display: none;
+}
+.progess_bar_mobile{
+  display: none;
+}
+.btn_settings_ui_mobile{
+  display: none;
+}
+@media (max-width: 950px) {
+  #app {
+    display: grid;
+  }
+  #phaser-container{
+    height: 70dvh;
+    margin-inline:auto ;
+    width: 70%;
+    outline: 2px solid black;
+  }
+  .nabvar_options{
+    display: flex;
+    width: 75%;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .fire_fly_container{
+    display: none;
+  }
+  .progess_bar{
+    display: none;
+  }
+  .btn_settings_ui{
+    display: none;
+  }
+  .game_info_and_options_2{
+    height: fit-content;
+  }
+  .footer_game_options{
+    width: 75%;
+  }
+  .logo_fly_mobile{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url('/icons_/fly.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .progess_bar_mobile{
+    display: block; 
+    width: 120px;
+    height: 30px;
+    background: linear-gradient(#77A49A, #3B5A51);
+    border-radius: 15px / 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2px;
+  }
+  .progess_bar_mobile > div{
+    width: var(--set-barprogress);/*variable de progreso del nivel */
+    height: 100%;
+    background: linear-gradient(#F26665,#C85352);
+    border-radius: 10px / 50%;
+    transition: all 1s;
+  }
+  .btn_settings_ui_mobile{
+    display: block;
+    width: 100px;
+    height: 50px;
+    outline: 2px solid blue;
+    display: flex;
+    justify-content: space-between;
+  }
+  .game_info_and_options_1{
+    width: 100%;
+    height: calc(100dvh / 8);
+    flex-direction: row;
+    background-color: transparent;
+    margin-inline: auto;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .box_about_this_level:nth-child(1) {
+    display: none;
+  }
+  .box_about_this_level:nth-child(2) {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+  .wheel_status_sub_level_1 {
+    position: fixed;
+    top: 15%;
+    height: 100px;
+    width: 100px;
+    right: 4%;
+  }
+  .wheel_status_sub_level_2 {
+    position: fixed;
+    top: 15%;
+    height: 100px;
+    width: 100px;
+    right: 4%;
+  }
+  .wheel_status_sub_level_3 {
+    position: fixed;
+    top: 15%;
+    height: 100px;
+    width: 100px;
+    right: 4%;
+  }
 }

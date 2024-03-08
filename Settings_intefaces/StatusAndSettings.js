@@ -26,7 +26,7 @@ const parentElement=document.querySelector('.game_info_and_options_2')
     parentElement.appendChild(fireflyTag)
     parentElement.appendChild(progressBarTag)
     parentElement.appendChild(btnSettignsTag)
-    progressBarTag.value='70'
+    
 }
 
 export {addComponentsToHandleStatusAndSettings}

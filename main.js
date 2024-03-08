@@ -42,7 +42,6 @@ function addSections() {
             section.id = 'phaser-container';
             appElement.appendChild(section);
             section.className = 'section-2';
-            section.style.width='48%'
             const getGameView= document.querySelector('#phaser-container')
             getGameView.appendChild(sectionsHeaderIndsideGameView)
             getGameView.appendChild(sectionsMainIndsideGameView)
