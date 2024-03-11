@@ -400,7 +400,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 2px;
+    padding: 4px 3px;
   }
   .progess_bar_mobile > div{
     width: var(--set-barprogress);/*variable de progreso del nivel */
@@ -413,9 +413,29 @@
     display: block;
     width: 100px;
     height: 50px;
-    outline: 2px solid blue;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+  }
+  .btn_settings_ui_mobile > button{
+    width: 40px;
+    height: 40px;
+    border: 4px solid #74A097;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 2px;
+  }
+  .btn_settings_ui_mobile > button:nth-child(1){
+    background: url('./icons_/sound.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .btn_settings_ui_mobile > button:nth-child(2){
+    background: url('./icons_/gear.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
   .game_info_and_options_1{
     width: 100%;
@@ -436,6 +456,18 @@
     justify-content: center;
     align-items: center;
     margin: 0;
+    position: relative;
+  }
+  .box_about_this_level:nth-child(2):hover:after{
+    position: absolute;
+    content: 'El juego consiste en elegir la esfera con el color que es igual al panel superior izquierdo dentro de la pantalla del juego, ejemplo si la esfera es azul debe elegir el color de la esfera y luego hacer click sobre alguna, cada vez la elija una esfera con el color requerido se agrerara dicho color al circulo cromatica.';
+    width: 200px;
+    height: 180px;
+    background-color: #08F8BD;
+    border-radius: 10px;
+    padding: 2px;
+    bottom: -200px;
+    right:  -200px;
   }
   .wheel_status_sub_level_1 {
     position: fixed;

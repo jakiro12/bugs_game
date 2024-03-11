@@ -28,7 +28,9 @@ export function levelSuccesslful(){
         secondarychromaticWheelColors.push(secondaryColors[2]) //Fin nuevos colores
         modalContainer.className=''
         let bar_progress_status=document.querySelector('.progess_bar > div')
+        let bar_progress_status_mobile=document.querySelector('.progess_bar_mobile > div')
         bar_progress_status.style.setProperty('--set-barprogress','0%') //Reinicia la barra de progreso
+        bar_progress_status_mobile.style.setProperty('--set-barprogress','0%') //Reinicia la barra de progreso
         if (secondarychromaticWheelColors.length > 0) {
             bugRequired.style.backgroundColor = secondarychromaticWheelColors[0];
             wheelSettings.classList.remove(wheelSettings.classList[0])

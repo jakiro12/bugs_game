@@ -31,15 +31,17 @@ function handleBugToChoose (){
     }
     let initial_amount=chromaticWheelColors.length
     function updateColorToSelect(){
+        let bar_progress_status=document.querySelector('.progess_bar > div')
+        let bar_progress_status_mobile=document.querySelector('.progess_bar_mobile > div')
         if (chromaticWheelColors.length > 0) {
             bugRequired.style.backgroundColor = chromaticWheelColors[0];
-            let bar_progress_status=document.querySelector('.progess_bar > div')
             let calculate_percent=100 - (( chromaticWheelColors.length/initial_amount ) * 100)
              bar_progress_status.style.setProperty('--set-barprogress',`${calculate_percent}%`)
+             bar_progress_status_mobile.style.setProperty('--set-barprogress',`${calculate_percent}%`)
         }else if(chromaticWheelColors.length === 0){ // corregir el tema de la barra de carga
-            let bar_progress_status=document.querySelector('.progess_bar > div')
             let calculate_percent=100 - (( chromaticWheelColors.length/initial_amount ) * 100)
             bar_progress_status.style.setProperty('--set-barprogress',`${calculate_percent}%`)
+            bar_progress_status_mobile.style.setProperty('--set-barprogress',`${calculate_percent}%`)
             subLevel_1Complete()
             bugRequired.style.backgroundColor = "grey"; // Si el array esta vacio dejar este color
         }else {
